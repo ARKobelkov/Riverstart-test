@@ -14,7 +14,7 @@ class App {
         this.initScrollTo()
 
         // svgsprite
-        this.importAll(require.context('../svgsprite', false, /\.svg$/));
+        this.importAll(require.context('../svgsprite', false, /\.svg$/))
     }
 
     initScrollTo() {
@@ -37,4 +37,7 @@ class App {
         r.keys().forEach(r)
     }
 }
-new App(appConfig || {})
+
+document.addEventListener('DOMContentLoaded', () => {
+    window.app = new App(appConfig || {})
+})
