@@ -2,12 +2,12 @@
 Основной контейнер
 */
 .content {
-    padding-top: map-get($header-height, sm) + 2rem;
-    padding-bottom: 2rem;
+  padding-top: map-get($header-height, sm) + 2rem;
+  padding-bottom: 2rem;
 
-    @each $key in (md, lg, xl) {
-        @include up($key) {
-            padding-top: map-get($header-height, $key) + 2rem;
-        }
+  @each $key in (md, lg, xl) {
+    @include up($key) {
+      padding-top: map-get($header-height, $key) + 2rem;
     }
+  }
 }

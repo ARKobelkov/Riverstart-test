@@ -1,8 +1,12 @@
 extends _layouts/default
 
 block config
-    - var pagetitle = "Other Page"
+  - var pagetitle = "Other Page"
+  - var bodyClass = ''
+
+block head
+  link(href=require('../scss/app.scss') rel='stylesheet')
 
 block content
-    .container
-        a(href="index.html") Index Page
+  .container
+    a(href="index.html") Index Page
