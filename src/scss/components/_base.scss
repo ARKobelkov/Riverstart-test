@@ -1,120 +1,120 @@
 html {
-    font-size: $font-size;
+  font-size: $font-size;
 }
 
 .body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 
-    background: $color-bg;
-    color: $color-text;
+  background: $color-bg;
+  color: $color-text;
 
-    font-family: $font-family;
-    font-size: $font-size;
-    letter-spacing: $letter-spacing;
-    line-height: $line-height;
+  font-family: $font-family;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
 }
 
 .container {
-    @include make-container();
+  @include make-container();
 }
 
 .hidden {
-    display: none !important;
+  display: none !important;
 
-    @each $key in (md, lg, xl) {
-        &-#{$key} {
-            @include up($key) {
-                display: none !important;
-            }
-        }
+  @each $key in (md, lg, xl) {
+    &-#{$key} {
+      @include up($key) {
+        display: none !important;
+      }
     }
+  }
 }
 
 .text {
-    &-nowrap {
-        white-space: nowrap;
-    }
+  &-nowrap {
+    white-space: nowrap;
+  }
 
-    &-muted {
-        color: rgba($color-text, .5);
-    }
+  &-muted {
+    color: rgba($color-text, .5);
+  }
 
-    &-uppercase {
-        text-transform: uppercase;
-    }
+  &-uppercase {
+    text-transform: uppercase;
+  }
 }
 
 .color-primary {
-    color: $color-primary !important;
+  color: $color-primary !important;
 }
 
 .color-secondary {
-    color: $color-secondary !important;
+  color: $color-secondary !important;
 }
 
 a,
 .link {
-    cursor: pointer;
-    color: $link-color;
-    text-decoration: underline solid rgba($color-text, .5);
-    @include transition((color, text-decoration-color));
+  cursor: pointer;
+  color: $link-color;
+  text-decoration: underline solid rgba($color-text, .5);
+  @include transition((color, text-decoration-color));
 
-    @include hover {
-        color: $link-hover-color;
-        text-decoration-color: rgba($link-hover-color, .5);
-    }
+  @include hover {
+    color: $link-hover-color;
+    text-decoration-color: rgba($link-hover-color, .5);
+  }
 }
 
 strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 @include placeholder {
-    color: rgba($color-text, .5);
+  color: rgba($color-text, .5);
 }
 
 .necessaty_fields {
-    display: none !important;
+  display: none !important;
 }
 
 .lazyload {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .fancybox-navigation {
-    position: static;
+  position: static;
 }
 
 .visually-hidden {
-    position: absolute;
-    z-index: -1;
-    width: 0;
-    height: 0;
-    padding: 0;
-    margin: 0;
-    border: none;
-    overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  overflow: hidden;
 }
 
 .cover-pic,
 .contain-pic {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .cover-pic {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 .contain-pic {
-    object-fit: contain;
+  object-fit: contain;
 }
 
 .svgsprite {
-    display: inline-block;
-    width: auto;
-    height: auto;
-    vertical-align: middle;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
 }

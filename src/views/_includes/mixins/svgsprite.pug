@@ -1,3 +1,5 @@
-mixin svgsprite(name)
-    svg(class="svgsprite _" + name)&attributes(attributes)
-        use(xlink:href="#" + name)
+mixin svgsprite(name, title)
+  svg(class=`svgsprite _${name}` tabindex='-1' role='img')&attributes(attributes)
+    if(title)
+      title= title
+    use(xlink:href=`#${name}` tabindex='-1')

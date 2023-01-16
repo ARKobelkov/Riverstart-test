@@ -1,13 +1,13 @@
 .footer {
-    $root: &;
+  $root: &;
 
-    margin-top: auto;
+  margin-top: auto;
 
-    background: $color-gray;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  background: $color-gray;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
-    &__inner {
-        @extend .container;
-    }
+  &__inner {
+    @extend .container;
+  }
 }
