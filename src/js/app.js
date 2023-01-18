@@ -7,7 +7,7 @@ class App {
 
   constructor(config = {}) {
     Object.keys(config).forEach((key) => {
-      if (this.hasOwnProperty(key)) {
+      if (Object.hasOwn(config, key)) {
         this[key] = config[key]
       }
     })
@@ -17,8 +17,10 @@ class App {
     this.body = document.querySelector('body')
     this.header = document.querySelector('header')
 
-    // svgsprite
-    this.importAll(require.context('../svgsprite', false, /\.svg$/))
+
+    setTimeout(() => {
+      // include components here
+    }, 0)
   }
 
   initScrollTo() {

@@ -24,7 +24,7 @@ module.exports = merge(webpackConfiguration, {
     open: false,
     compress: true,
     hot: false,
-    watchFiles: ['src/**/*.pug'],
+    watchFiles: ['src/**/*.pug', 'src/**/*.js', 'src/**/*.scss'],
     ...environment.server,
   },
 
@@ -32,7 +32,10 @@ module.exports = merge(webpackConfiguration, {
   watchOptions: {
     aggregateTimeout: 300,
     poll: 300,
-    ignored: /node_modules/,
+    ignored: [
+      '**/node_modules',
+      '**/lib'
+    ],
   },
 
   /* Additional plugins configuration */
