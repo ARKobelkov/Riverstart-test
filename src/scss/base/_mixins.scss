@@ -16,8 +16,10 @@
 }
 
 @mixin hover() {
-  &:hover {
-    @content;
+  @include hover-mouse-only {
+    &:hover {
+      @content;
+    }
   }
 
   @include focus() {
