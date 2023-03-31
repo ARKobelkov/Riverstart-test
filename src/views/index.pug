@@ -9,72 +9,90 @@ block head
   link(href=require('../scss/app.scss') rel='stylesheet')
 
 block content
-  .container
-    .block
-      ul.demo-menu
-        li
-          a(href="other-page.html") Other Page
-        li
-          span.link.js-scroll(data-scroll="#scroll") Scroll
-    .block._mb-none.demo-block
-      pre .block._mb-none
-    .block.demo-block
-      pre .block
-    .block
-      span.text-muted .text-muted
-      |
-      span.text-nowrap .text-nowrap
-      |
-      span.text-uppercase .text-uppercase
-      |
-      span.color-primary .color-primary
-      |
-      span.color-secondary .color-secondary
-      |
-      a(href="#") a
-      |
-      span.link .link
-      |
-      br
-      span.demo-font font-family-alt
-    .block
-      pre i.icon._{name}
-      span(style="font-size:2rem")
-        i.icon._facebook
-        i.icon._twitter
-        i.icon._instagram
-        i.icon._vk
-        i.icon._ok
-        i.icon._youtube
-        i.icon._telegram
-        i.icon._tiktok
-    .block
-      pre +svgsprite("{name}"", "{title}"")
-      +svgsprite("wikipedia", 'wikipedia')
-      +svgsprite("track", 'track')
-    #scroll.block
-      pre div.rte
-      .rte
-        h3 Title H3
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris egestas iaculis nisl, in fermentum urna scelerisque nec. Mauris enim erat, bibendum sed condimentum at, ultrices non arcu. Morbi eu sem porttitor, vulputate justo ut, fringilla turpis. Donec in elementum nunc. Cras maximus faucibus dictum. Duis sodales lacus ut eros sollicitudin tristique. Duis vitae tincidunt sem, eget ullamcorper turpis. Maecenas tristique eget leo sed sodales.
-        ul
-          li One
-          li Two
-          li Three
-          li Four
-        p Vivamus risus erat, dictum vel facilisis non, consectetur id eros. Mauris pretium libero libero, quis malesuada ante eleifend nec. Vivamus massa lorem, tempus non nibh in, egestas facilisis augue. Vestibulum eleifend erat ante, et interdum lacus posuere sodales. Nam elementum dignissim nisi et pretium. Nunc tristique ipsum purus, ut rutrum leo vestibulum a. Praesent fringilla arcu orci, at faucibus ante convallis a.
-        p
-          img(src="assets/img/lena.webp" loading="lazy" alt="")
-          img(src="assets/img/transparency.webp" loading="lazy" alt="")
-          img(src="assets/img/lena.jpg" loading="lazy" alt="")
-          img(src="assets/img/transparency.png" loading="lazy" alt="")
-          img(src="assets/img/logo.svg" loading="lazy" alt="")
-        ol
-          li One
-          li Two
-          li Three
-          li Four
-        p Praesent accumsan ipsum a semper luctus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam a ex turpis. Vivamus vulputate dapibus quam, non iaculis lacus feugiat in. Nullam nec erat in orci ultricies convallis ut et nunc. Nunc risus nisl, dignissim vel ipsum sed, viverra tempus lacus. Nam ut justo at nulla fringilla finibus. Mauris vulputate mauris sit amet cursus imperdiet. Aenean finibus mattis tortor, et rhoncus risus pharetra sit amet.
-        p Praesent accumsan ipsum a semper luctus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam a ex turpis. Vivamus vulputate dapibus quam, non iaculis lacus feugiat in. Nullam nec erat in orci ultricies convallis ut et nunc. Nunc risus nisl, dignissim vel ipsum sed, viverra tempus lacus. Nam ut justo at nulla fringilla finibus. Mauris vulputate mauris sit amet cursus imperdiet. Aenean finibus mattis tortor, et rhoncus risus pharetra sit amet.
-        p Praesent accumsan ipsum a semper luctus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam a ex turpis. Vivamus vulputate dapibus quam, non iaculis lacus feugiat in. Nullam nec erat in orci ultricies convallis ut et nunc. Nunc risus nisl, dignissim vel ipsum sed, viverra tempus lacus. Nam ut justo at nulla fringilla finibus. Mauris vulputate mauris sit amet cursus imperdiet. Aenean finibus mattis tortor, et rhoncus risus pharetra sit amet.
-        p Praesent accumsan ipsum a semper luctus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam a ex turpis. Vivamus vulputate dapibus quam, non iaculis lacus feugiat in. Nullam nec erat in orci ultricies convallis ut et nunc. Nunc risus nisl, dignissim vel ipsum sed, viverra tempus lacus. Nam ut justo at nulla fringilla finibus. Mauris vulputate mauris sit amet cursus imperdiet. Aenean finibus mattis tortor, et rhoncus risus pharetra sit amet.
+  .content__wrapper
+    .container
+      //- contacts
+      .contacts
+        h1.contacts__title Приходите в&nbsp;гости, пишите, звоните
+        .contacts__line 
+          .contacts__item 
+            .contacts__contact 
+              .contacts__contact-title Поговорить с нами по телефону
+              .contacts__contact-link-wrapper 
+                a.contacts__contact-link(href="tel:+78312889354") 8 (831) 2-889-354
+          .contacts__account 
+            picture.contacts__account-picture
+              source(type="image/webp" data-srcset="assets/img/irina@2.webp" srcset="assets/img/irina@2.webp" media="(min-width: 768px)")
+              source(type="image/webp" data-srcset="assets/img/irina@1.webp" srcset="assets/img/irina@1.webp")
+              source(type="image/jpeg" data-srcset="assets/img/irina@2.png" srcset="assets/img/irina@2.png" media="(min-width: 768px)")
+              source(type="image/jpeg" data-srcset="assets/img/irina@1.png" srcset="assets/img/irina@1.png")
+              img.contacts__account-img.lazyload(data-src="assets/img/irina.png" src="assets/img/irina.png" alt="irina" title="irina")
+            .contacts__account-message 
+              .contacts__account-message-title Меня зовут Ира, скорее всего вам отвечу именно я 👋
+              .contacts__account-message-subtitle Ирина Пшеницина, аккаунт-менеджер
+        .contacts__line._right 
+          .contacts__item 
+            .contacts__contact 
+              .contacts__contact-title Написать нам на почту
+              .contacts__contact-link-wrapper 
+                a.contacts__contact-link(href="mailto:hello@riverstart.ru") hello@riverstart.ru
+        .contacts__line 
+          .contacts__item 
+            .contacts__contact 
+              .contacts__contact-title Поговорить с нашим аккаунт-менеджером в Telegram
+              .contacts__contact-link-wrapper 
+                a.contacts__contact-link(href="#") @ekhohrin
+            picture.contacts__contact-picture 
+              source(type="image/webp" data-srcset="assets/img/hohrin@2.webp" srcset="assets/img/hohrin@2.webp" media="(min-width: 768px)")
+              source(type="image/webp" data-srcset="assets/img/hohrin@1.webp" srcset="assets/img/hohrin@1.webp")
+              source(type="image/jpeg" data-srcset="assets/img/hohrin@2.png" srcset="assets/img/hohrin@2.png" media="(min-width: 768px)")
+              source(type="image/jpeg" data-srcset="assets/img/hohrin@1.png" srcset="assets/img/hohrin@1.png")
+              img.contacts__contact-img.lazyload(data-src="assets/img/hohrin.png" src="assets/img/hohrin.png" alt="ekhohrin" title="ekhohrin")
+      //- offices
+      .offices
+        .offices__item._nn-office
+          picture.offices__picture
+            source(type="image/webp" data-srcset="assets/img/office_nn@2.webp" srcset="assets/img/office_nn@2.webp" media="(min-width: 768px)")
+            source(type="image/webp" data-srcset="assets/img/office_nn@1.webp" srcset="assets/img/office_nn@1.webp")
+            source(type="image/jpeg" data-srcset="assets/img/office_nn@2.jpg" srcset="assets/img/office_nn@2.jpg" media="(min-width: 768px)")
+            source(type="image/jpeg" data-srcset="assets/img/office_nn@1.jpg" srcset="assets/img/office_nn@1.jpg")
+            img.offices__img.lazyload(data-src="assets/img/office_nn.jpg" src="assets/img/office_nn.jpg" alt="Нижегородский офис" title="Нижегородский офис")
+          .offices__text 
+            .offices__title Нижегородский офис
+            .offices__info 
+              address.offices__address ул. Рождественская, 26
+              .offices__phone 
+                a.offices__phone-link(href="tel:+78312889354") 8 (831) 2-889-354
+            .offices__road 
+              a.offices__road-link(href="#") Как добраться
+        .offices__item._msk-office
+          picture.offices__picture
+            source(type="image/webp" data-srcset="assets/img/office_msk@2.webp" srcset="assets/img/office_msk@2.webp" media="(min-width: 768px)")
+            source(type="image/webp" data-srcset="assets/img/office_msk@1.webp" srcset="assets/img/office_msk@1.webp")
+            source(type="image/jpeg" data-srcset="assets/img/office_msk@2.jpg" srcset="assets/img/office_msk@2.jpg" media="(min-width: 768px)")
+            source(type="image/jpeg" data-srcset="assets/img/office_msk@1.jpg" srcset="assets/img/office_msk@1.jpg")
+            img.offices__img.lazyload(data-src="assets/img/office_msk.jpg" src="assets/img/office_msk.jpg" alt="Нижегородский офис" title="Нижегородский офис")
+          .offices__text 
+            .offices__title Московский офис
+            .offices__info 
+              address.offices__address Новая площадь, 6
+              .offices__phone 
+                a.offices__phone-link(href="tel:+74991124621") 8 (499) 112-46-21
+            .offices__road 
+              a.offices__road-link(href="#") Как добраться
+        .offices__item._tln-office
+          picture.offices__picture
+            source(type="image/webp" data-srcset="assets/img/office_tln@2.webp" srcset="assets/img/office_tln@2.webp" media="(min-width: 768px)")
+            source(type="image/webp" data-srcset="assets/img/office_tln@1.webp" srcset="assets/img/office_tln@1.webp")
+            source(type="image/jpeg" data-srcset="assets/img/office_tln@2.jpg" srcset="assets/img/office_tln@2.jpg" media="(min-width: 768px)")
+            source(type="image/jpeg" data-srcset="assets/img/office_tln@1.jpg" srcset="assets/img/office_tln@1.jpg")
+            img.offices__img.lazyload(data-src="assets/img/office_tln.jpg" src="assets/img/office_tln.jpg" alt="Нижегородский офис" title="Нижегородский офис")
+          .offices__text 
+            .offices__title Таллинский офис
+            .offices__info 
+              address.offices__address 3 korrus, Metro Plaza, Viru väljak 2
+              .offices__phone 
+                a.offices__phone-link(href="tel:+3726104253") +372 610-42-53
+              
+
+   

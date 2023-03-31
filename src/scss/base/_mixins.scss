@@ -165,3 +165,11 @@
     }
   }
 }
+
+@mixin media-up($name) {
+  $size: map-get($grid-breakpoints, $name);
+
+  @media (min-width: $size) {
+      @content;
+  }
+}

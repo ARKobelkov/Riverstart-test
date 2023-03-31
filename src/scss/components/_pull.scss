@@ -1,0 +1,14 @@
+.pull {
+  &__icon {
+    width: 23px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    & > div {
+      width: 100%;
+      height: 2px;
+      background: $color-base;
+    }
+  }
+}

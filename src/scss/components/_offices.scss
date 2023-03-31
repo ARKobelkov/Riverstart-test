@@ -1,0 +1,276 @@
+.offices {
+  position: relative;
+  padding-bottom: 120px;
+  padding-top: 45px;
+  @include media-up(md) {
+    margin-top: -42px;
+    padding-top: 0;
+    padding-bottom: 70px;
+  }
+  @include media-up(lg) {
+    padding-bottom: 115px; 
+  }
+  @include media-up(xl) {
+    margin-top: -10px;
+  }
+  @include media-up(xl) {
+    padding-bottom: 270px;
+  }
+  &__item {
+    position: relative;
+    margin-bottom: 50px;
+    @include media-up(md) {
+      margin-bottom: 0;
+    }
+    &._nn-office {
+      @include media-up(md) {
+        margin-left: 46%;
+      }
+    }
+    &._msk-office {
+      @include media-up(md) {
+        margin-top: -317px;
+      }
+      @include media-up(lg) {
+        margin-left: 4%;
+        margin-top: -31%;
+      }
+      @include media-up(xxl) {
+        margin-top: -26.5%;
+      }
+    }
+    &._tln-office {
+      @include media-up(md) {
+        margin-top: 112px;
+        margin-left: 13%;
+      }
+      @include media-up(xxl) {
+        margin-top: 166px;
+      }
+    }
+  }
+  &__picture {
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    width: 100%;
+    @include media-up(lg) {
+      width: 89%;
+      border-radius: 24px;
+    }
+    @include media-up(xl) {
+      width: 78%;
+      border-radius: 36px;
+    }
+    .offices__item._msk-office & {
+      @include media-up(md) {
+        width: 36.5%;
+      }
+      @include media-up(lg) {
+        width: 33%;
+      }
+      @include media-up(xl) {
+        width: 29%;
+      }
+    }
+    .offices__item._tln-office & {
+      @include media-up(md) {
+        width: 58.5%;
+      }
+      @include media-up(xl) {
+        width: 51%;
+      }
+    }
+  }
+  &__img {
+    width: 100%;
+  }
+  &__text {
+    margin-bottom: 18px;
+    .offices__item._nn-office & {
+      @include media-up(md) {
+        margin-left: 11%;
+        margin-top: -9%;
+      }
+      @include media-up(lg) {
+        margin-left: 40.5%;
+        margin-top: -14%;
+      }
+      @include media-up(xxl) {
+        margin-top: -12%;
+      }
+    }
+    .offices__item._msk-office & {
+      @include media-up(md) {
+        margin-top: -11.5%;
+        margin-left: 7.5%;
+      }
+      @include media-up(lg) {
+        margin-top: -13.5%;
+        margin-left: 28%;
+      }
+      @include media-up(xxl) {
+        margin-left: 23.5%;
+        margin-top: -11%;
+      }
+    }
+    .offices__item._tln-office & {
+      @include media-up(md) {
+        position: absolute;
+        top: -144px;
+        margin-left: 52%;
+      }
+      @include media-up(lg) {
+        top: 8%;
+      }
+      @include media-up(xxl) {
+        top: 9%;
+        margin-left: 45.5%;
+      }
+    }
+  }
+  &__info {
+    margin-bottom: 15px;
+    @include media-up(lg) {
+      margin-bottom: 20px;
+    }
+    @include media-up(xl) {
+      margin-bottom: 32px;
+    }
+  }
+  &__title {
+    color: $color-base;
+    font: $regular 24px / 1 $font-family;
+    letter-spacing: -0.01em;
+    margin-bottom: 15px;
+    @include media-up(md) {
+      font-size: 28px;
+      margin-bottom: 13px;
+    }
+    @include media-up(lg) {
+      font-size: 33px;
+      margin-bottom: 20px;
+    }
+    @include media-up(xxl) {
+      font-size: 46px;
+      margin-bottom: 29px;
+    }
+  }
+  &__address {
+    color: $color-base;
+    font: $regular 15px / 1 $font-family;
+    margin-bottom: 13px;
+    @include media-up(md) {
+      font-size: 16px;
+    }
+    @include media-up(lg) {
+      font-size: 19px;
+      margin-bottom: 20px;
+    }
+    @include media-up(xxl) {
+      font-size: 26px;
+      margin-bottom: 24px;
+    }
+  }
+  &__phone {
+    margin-bottom: 13px;
+    @include media-up(lg) {
+      margin-bottom: 20px;
+    }
+    @include media-up(xxl) {
+      margin-bottom: 24px;
+    }
+  }
+  &__phone-link {
+    display: inline-block;
+    color: $color-base;
+    font: $regular 15px / 1 $font-family;
+    text-decoration: none;
+
+    @include hover {
+      color: $color-gray;
+      text-decoration-color: rgba($link-hover-color, .5);
+    }
+
+    @include media-up(md) {
+      font-size: 16px;
+    }
+    @include media-up(lg) {
+      font-size: 19px;
+    }
+    @include media-up(xxl) {
+      font-size: 26px;
+    }
+  }
+  &__road {
+    margin-bottom: 26px;
+    // @include media-up(lg) {
+    //   margin-bottom: 26px;
+    // }
+  }
+  &__road-link {
+    display: inline-block;
+    position: relative;
+    color: $color-base;
+    text-decoration: none;
+    font: $regular 13px / 1.4 $font-family;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    padding-right: 15px;
+
+    @include hover {
+      color: $color-gray;
+      &:before {
+        background: $color-gray;
+      }
+      &::after {
+        border-color: $color-gray;
+      }
+    }
+
+    @include media-up(lg) {
+      font-size: 15px;
+    }
+    @include media-up(xl) {
+      padding-right: 20px;
+    }
+    @include media-up(xxl) {
+      font-size: 20px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 4px;
+      height: 7px;
+      width: 1px;
+      background: $color-base;
+      transform: translateY(-23%) rotate(45deg);
+      @include transition(.5);
+      @include media-up(xl) {
+        height: 10px;
+      }
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 1px;
+      top: 50%;
+      width: 4px;
+      height: 4px;
+      border-top: 1px solid $color-base;
+      border-right: 1px solid $color-base;
+      transform: translateY(-30%);
+      @include transition(.5);
+      @include media-up(xl) {
+        width: 6px;
+        height: 6px;
+        right: 0;
+      }
+    }
+  }
+}

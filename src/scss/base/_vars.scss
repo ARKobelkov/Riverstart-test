@@ -1,11 +1,12 @@
 /* Main Colors */
-$color-base: #171717;
+$color-base: #F7F7FA;
 $color-white: #fff;
-$color-gray: #ccc;
+$color-dark: #1F2032;
+$color-gray: #9A9AAD;
 $color-primary: #E20210;
-$color-secondary: #0E3DB8;
+$color-secondary: #312DFF;
 
-$color-bg: #f8f8f8;
+$color-bg: #1F2032;
 $color-text: $color-base;
 $color-error: $color-primary;
 $color-popup-background: $color-white;
@@ -14,20 +15,21 @@ $color-overlay: $color-base;
 $opacity-overlay: .4;
 
 $link-color: $color-text;
-$link-hover-color: $color-primary;
+$link-hover-color: $color-secondary;
 
 $transition-duration: .2s;
 $transition-timing-function: ease-in-out;
 
 $header-z-index: 1000;
-$header-height: (sm: 2rem,
-  md: 3rem,
-  lg: 4rem,
-  xl: 5rem,
+$header-height: (sm: 70px,
+  md: 84px,
+  lg: 77px,
+  xl: 77px,
+  xxl: 92px
 );
 
 /* Fonts */
-$font-family: 'Fira Sans',
+$font-family: 'Mabry Pro',
 sans-serif;
 $font-family-alt: 'halvar',
 $font-family;
@@ -36,19 +38,30 @@ $font-weight: normal;
 $letter-spacing: normal;
 $line-height: 1.2;
 
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$black: 900;
+
 /* Screen sizes */
 $grid-breakpoints: (sm: 320px,
   md: 768px,
   lg: 1280px,
-  xl: 1600px);
+  sxl: 1360px,
+  xl: 1600px,
+  xxl: 1920px);
 $container-max-widths: (sm: 100%,
   md: 100%,
-  lg: 1170px,
-  xl: 1170px);
-$container-paddings: (sm: 25px,
-  md: 50px,
-  lg: 0,
-  xl: 0);
+  lg: 1150px,
+  sxl: 1320px,
+  xl: 1550px,
+  xxl: 1750px);
+$container-paddings: (sm: 30px,
+  md: 40px,
+  lg: 40px,
+  xl: 40px,
+  xxl: 40px);
 
 /* block margins */
 $block-margins: (sm: 1rem,

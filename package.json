@@ -55,6 +55,7 @@
 	},
 	"target": "web",
 	"dependencies": {
-		"focus-visible": "^5.2.0"
+		"focus-visible": "^5.2.0",
+		"lazysizes": "^5.3.2"
 	}
 }

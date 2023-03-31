@@ -1,0 +1,32 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    margin: 0 -13px;
+    @include media-up(xxl) {
+      margin: 0 -20px;
+    }
+  }
+  &__item {
+    padding: 0 13px;
+    @include media-up(xxl) {
+      padding: 0 20px;
+    }
+    &._desktop {
+      display: none;
+      @include media-up(xl) {
+        display: block;
+      }
+    }
+  }
+  &__link {
+    display: block;
+    color: $color-base;
+    font: $regular 14px / 1.5 $font-family;
+    text-decoration: none;
+    white-space: nowrap;
+    @include media-up(xxl) {
+      font-size: 17px;
+    }
+  }
+}

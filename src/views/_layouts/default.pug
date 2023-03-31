@@ -15,8 +15,62 @@ html(lang="en")
     .content
       block content
 
-    block footer
-      include ../_includes/blocks/footer
+    //- block footer
+    //-   include ../_includes/blocks/footer
+
+    //- mobile-menu
+    .mobile-menu.js-mobile-menu
+      .mobile-menu__wrapper
+        .mobile-menu__head 
+          .mobile-menu__logo 
+            //- logo
+            .logo
+              a.logo__link(href="/")
+                +svgsprite("logo", 'logo') 
+          .mobile-menu__close.js-mobile-close
+            div 
+            div 
+        nav.mobile-menu__nav 
+          ul.mobile-menu__list.js-menu 
+            li.mobile-menu__item 
+              a.mobile-menu__link._arrow(href="#" data="nav-1.1") Услуги
+            li.mobile-menu__item 
+              a.mobile-menu__link(href="#") Кейсы
+            li.mobile-menu__item 
+              a.mobile-menu__link(href="#") Студия
+            li.mobile-menu__item 
+              a.mobile-menu__link(href="#") Блог
+            li.mobile-menu__item 
+              a.mobile-menu__link(href="#") Контакты
+          .mobile-menu__submenu.js-submenu(id="nav-1.1") 
+            .mobile-menu__back.js-menu-back Назад
+            ul.mobile-menu__sublist
+              li.mobile-menu__item 
+                a.mobile-menu__link(href="#") Сайты
+              li.mobile-menu__item 
+                a.mobile-menu__link(href="#") Сервисы
+              li.mobile-menu__item 
+                a.mobile-menu__link(href="#") Маркетинг
+              li.mobile-menu__item 
+                a.mobile-menu__link(href="#") SEO
+              li.mobile-menu__item 
+                a.mobile-menu__link(href="#") Приложения
+              li.mobile-menu__item 
+                a.mobile-menu__link(href="#") Брендинг
+        .mobile-menu__footer 
+          .mobile-menu__contacts 
+            .mobile-menu__contacts-title Связаться с нами:
+            .mobile-menu__contact 
+              a.mobile-menu__contact-link(href="mailto:hello@riverstart.ru") hello@riverstart.ru
+            .mobile-menu__contact 
+              a.mobile-menu__contact-link(href="tel:+74991124621") 8 (499) 112-46-21
+          ul.mobile-menu__socials
+            li.mobile-menu__socials-item 
+              a.mobile-menu__socials-link(href="#") Facebook
+            li.mobile-menu__socials-item 
+              a.mobile-menu__socials-link(href="#") Instagram
+            li.mobile-menu__socials-item 
+              a.mobile-menu__socials-link(href="#") Behance
 
     .hidden
       // include popups here

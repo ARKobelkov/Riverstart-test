@@ -1,0 +1,28 @@
+.tags {
+  display: flex;
+  align-items: center;
+  margin: 0 -2px;
+  @include media-up(xxl) {
+    margin: 0 -4px;
+  }
+  &__item {
+    padding: 0 2px;
+    @include media-up(xxl) {
+      padding: 0 4px;
+    }
+  }
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $color-dark;
+    background: $color-white;
+    border-radius: 42px;
+    padding: 6px 14px;
+    font: $medium 15px / 1 $font-family;
+    letter-spacing: -0.01em;
+    @include media-up(xxl) {
+      font-size: 20px;
+      padding: 9px 18px;
+    }
+  }
+}

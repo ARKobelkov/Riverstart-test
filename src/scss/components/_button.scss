@@ -1,0 +1,19 @@
+.button {
+  display: inline-block;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  background: $color-secondary;
+  color: $color-base;
+  font: $regular 14px / 1 $font-family;
+  border-radius: 8px;
+  white-space: nowrap;
+  @include hover {
+    color: $color-base;
+  }
+  @include media-up(xxl) {
+    font-size: 19px;
+    padding: 20px 26px;
+    border-radius: 12px;
+  }
+}

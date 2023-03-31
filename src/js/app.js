@@ -1,6 +1,9 @@
+import 'lazysizes'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit'
+
 import '../icon.font'
 import 'focus-visible'
-import {OVERFLOW_HIDDEN, VAR_PADDING_RIGHT, VAR_PADDING_RIGHT_PX} from './constants'
+import {OVERFLOW_HIDDEN} from './constants'
 
 class App {
   scrollToOffset = 100
@@ -17,6 +20,10 @@ class App {
     this.body = document.querySelector('body')
     this.header = document.querySelector('header')
 
+    this.openMobileMenu()
+    this.closeMobileMenu()
+    this.openSubmenu()
+    this.openMainMenu()
 
     setTimeout(() => {
       // include components here
@@ -43,91 +50,73 @@ class App {
     r.keys().forEach(r)
   }
 
-  setFocusInModal(modal, openBtn, excludeSelector = '') {
-    openBtn = openBtn?.[0] || openBtn
-    excludeSelector = excludeSelector ? `:not(${excludeSelector})` : ''
-    const focusableElements =
-      `button${excludeSelector}, [href]${excludeSelector}, input${excludeSelector}, select${excludeSelector}, textarea${excludeSelector}, [tabindex]:not([tabindex="-1"])${excludeSelector}`
+  openMobileMenu() {
+    const pull = document.querySelector('.js-pull')
+    const mobileMenu = document.querySelector('.js-mobile-menu')
+    const body = this.body 
 
-    if (!modal) return
+    pull.addEventListener('click', function() {
+      mobileMenu.classList.add('_active')
+      body.classList.add(OVERFLOW_HIDDEN)
+    })
+  }
 
-    const focusableContent = modal.querySelectorAll(focusableElements)
-    if (!focusableContent.length) return
+  closeMobileMenu() {
+    const mobileMenu = document.querySelector('.js-mobile-menu')
+    const closeBtn = document.querySelector('.js-mobile-close')
+    const body = this.body 
 
-    let firstFocusableElement = focusableContent[0]
-    let lastFocusableElement = focusableContent[
-    focusableContent.length - 1
-      ]
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('_active')
+      body.classList.remove(OVERFLOW_HIDDEN)
+      this.closeSubmenu()
+    })
 
-    const listener = (e) => {
-      const isTabPressed = e.key === 'Tab' || e.keyCode === 9
-      if (!isTabPressed) {
-        return
+    window.addEventListener('resize', (e) => {
+      const width = body.clientWidth 
+      if (width >= 1280) {
+        mobileMenu.classList.remove('_active')
+        body.classList.remove(OVERFLOW_HIDDEN)
+        this.closeSubmenu()
       }
+    })
+  }
 
-      firstFocusableElement = [...focusableContent].find(el => window.getComputedStyle(el).visibility !== 'hidden') || firstFocusableElement
-      lastFocusableElement = [...focusableContent].reverse().find(el => window.getComputedStyle(el).visibility !== 'hidden') || lastFocusableElement
+  openSubmenu() {
+    const menu = document.querySelector('.js-menu')
 
-      if (e.shiftKey) {
-        // if shift key pressed for shift + tab combination
-        if (document.activeElement === firstFocusableElement) {
-          lastFocusableElement.focus() // add focus for the last focusable element
-          e.preventDefault()
-        }
-      } else if (document.activeElement === lastFocusableElement) {
-        // if tab key is pressed
-        // if focused has reached to last focusable element then focus first focusable element after pressing tab
-        firstFocusableElement.focus() // add focus for the first focusable element
+    menu.addEventListener('click', function(e) {
+      if (e.target.classList.contains('_arrow')) {
         e.preventDefault()
+        const id = e.target.getAttribute('data')
+        const submenu = document.getElementById(id)
+
+        this.classList.add('_left')
+        submenu.classList.add('_active')
       }
-    }
-
-
-    document.addEventListener('keydown', listener, false)
-
-    setTimeout(() => {
-      firstFocusableElement.focus()
-    }, 500)
-
-    return () => {
-      document.removeEventListener('keydown', listener, false)
-
-      if (openBtn) {
-        setTimeout(() => {
-          openBtn.focus()
-        }, 500)
-      }
-    }
+    })
   }
 
-  isElementInViewport(el, horizontalOnly = false) {
-    const rect = el.getBoundingClientRect()
-    const horizontal = rect.left >= 0 && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    const vertical = rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+  closeSubmenu() {
+    const menu = document.querySelector('.js-menu')
+    const submenus = document.querySelectorAll('.js-submenu')
 
-    return (
-      horizontalOnly ? horizontal : horizontal && vertical
-    )
+    menu.classList.remove('_left')
+    submenus.forEach((submenu) => {
+      submenu.classList.remove('_active')
+    })
   }
 
-  addOverflowHiddenBody() {
-    const padding = this.getScrollbarWidth()
-    this.body.style.paddingRight = padding + 'px'
-    this.body.style.setProperty(VAR_PADDING_RIGHT, padding / 10 + 'rem')
-    this.body.style.setProperty(VAR_PADDING_RIGHT_PX, padding + 'px')
-    this.body.classList.add(OVERFLOW_HIDDEN)
-  }
-
-  removeOverflowHiddenBody() {
-    this.body.classList.remove(OVERFLOW_HIDDEN)
-    this.body.style.paddingRight = ''
-    this.body.style.removeProperty(VAR_PADDING_RIGHT)
-    this.body.style.removeProperty(VAR_PADDING_RIGHT_PX)
-  }
-
-  getScrollbarWidth() {
-    const documentWidth = document.documentElement.clientWidth
-    return Math.abs(window.innerWidth - documentWidth)
+  openMainMenu() {
+    const submenus = document.querySelectorAll('.js-submenu')
+    
+    submenus.forEach((submenu) => {
+      submenu.addEventListener('click', (e) => {
+        if (e.target.classList.contains('js-menu-back')) {
+          this.closeSubmenu()
+        }
+      })
+    })
   }
 }
 

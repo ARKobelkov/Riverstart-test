@@ -2,12 +2,16 @@
 Основной контейнер
 */
 .content {
-  padding-top: map-get($header-height, sm) + 2rem;
-  padding-bottom: 2rem;
+  padding-top: map-get($header-height, sm);
+  flex: 1 1 auto;
 
-  @each $key in (md, lg, xl) {
+  @each $key in (md, lg, xl, xxl) {
     @include up($key) {
-      padding-top: map-get($header-height, $key) + 2rem;
+      padding-top: map-get($header-height, $key);
     }
+  }
+  &__wrapper {
+    background: linear-gradient(180deg,#1f2032 15%, #312dff 100%);
+    padding: 1px 0;
   }
 }
